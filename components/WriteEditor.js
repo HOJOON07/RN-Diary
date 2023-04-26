@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {View, StyleSheet, TextInput} from 'react-native';
 
 const styles = StyleSheet.create({
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
 
 export default function WriteEditor(props) {
   const {title, body, onChangeTitle, onChangeBody} = props;
+  const bodyRef = useRef();
   return (
     <View style={styles.block}>
       <TextInput
@@ -37,7 +38,11 @@ export default function WriteEditor(props) {
         multiline
         textAlignVertical="top"
         onChangeText={onChangeBody}
-        value={body}></TextInput>
+        value={body}
+        ref={bodyRef}
+        onSubmitEditing={() => {
+          bodyRef.current.focus();
+        }}></TextInput>
     </View>
   );
 }
