@@ -33,6 +33,10 @@ const style = StyleSheet.create({
   icons: {
     color: 'white',
   },
+  box: {
+    color: 'blue',
+    backgroundColor: 'blue',
+  },
 });
 
 export default function FloatingWriteButton() {
