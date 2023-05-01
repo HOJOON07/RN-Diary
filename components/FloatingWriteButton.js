@@ -45,6 +45,9 @@ export default function FloatingWriteButton() {
   const onPress = () => {
     navigation.navigate('Write');
   };
+  const OnPRessse = () => {
+    navigation.navigate('/');
+  }; // 지우자
   return (
     <View style={style.wrapper}>
       <Pressable
